@@ -1,11 +1,19 @@
 @extends('layouts.frontend')
 @section('content')
+<div class="jumbotron p-3 p-md-5 text-white rounded bg-info" 
+>
+<h1 class="display-1 font-italic">LATEST POSTS</h1>
+</div>
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+      @foreach ($latest_posts as $latest)
         <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-          <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+        
+          <h2 class="display-5 font-italic">{{$latest->title}}</h2>
+          <div class="mb-1 text-muted">{{$latest->user->name}} {{ date('Y-m-d',strtotime($latest->created_at))}}</div>
+          <p class="lead my-3">{{$latest->description}}</p>
+          <p class="lead mb-0"><a href="{{route('posts.show',$latest->id)}}" class="text-white font-weight-bold">Continue reading...</a></p>
         </div>
+        @endforeach
       </div>
     
       <div class="row mb-2 mt-2">
