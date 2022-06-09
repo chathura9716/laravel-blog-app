@@ -21,7 +21,7 @@ Route::get('/', [WelcomeController::class ,'index'])->name('welcome');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name('home');
 Route::get('/addpost', [App\Http\Controllers\HomeController::class, 'Addpost'])->name('addpost');
 //posts
 Route::get('/posts/{postId}/show', [PostController::class, 'show'])->name('posts.show');

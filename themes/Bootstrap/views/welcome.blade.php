@@ -1,9 +1,7 @@
-@extends('layouts.frontend')
+@extends('layouts.admin')
 @section('content')
-<div class="jumbotron p-3 p-md-5 text-white rounded bg-info" 
+
 >
-<h1 class="display-1 font-italic">LATEST POSTS</h1>
-</div>
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
       @foreach ($latest_posts as $latest)
         <div class="col-md-6 px-0">

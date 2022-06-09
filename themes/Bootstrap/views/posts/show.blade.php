@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.admin')
 @section('content')
 
 <div class="card text-center mt-5 mb-5">
@@ -15,4 +15,5 @@
   {{ date('Y-m-d',strtotime($post->created_at))}}
   </div>
 </div>
+ 
 @endsection
